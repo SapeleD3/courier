@@ -1,9 +1,12 @@
 {
   "name": "@sapeled3/courier",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cloud messaging assistant, Built with Typescript and Nodejs ",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "typescript": "^5.1.3"
   },
