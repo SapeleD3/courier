@@ -1,0 +1,24 @@
+{
+  "name": "@sapeled3/courier",
+  "version": "1.0.1",
+  "description": "cloud messaging assistant, Built with Typescript and Nodejs ",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "^5.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --declaration"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SapeleD3/courier.git"
+  },
+  "author": "Moses Sapele",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SapeleD3/courier/issues"
+  },
+  "homepage": "https://github.com/SapeleD3/courier#readme"
+}
