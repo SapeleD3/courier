@@ -19,8 +19,9 @@ class Courier implements ICourier {
   }
 
   // NOTE: this method is public, indicating that the provider can be updated after instantiation
-  public setCourierProvider(payload: CourierPayload): void {
-    const { courierProvider = Providers.GCP_PUBSUB } = payload;
+  public setCourierProvider({
+    courierProvider = Providers.GCP_PUBSUB,
+  }: CourierPayload): void {
     this.provider = switchProvider(courierProvider);
   }
 
