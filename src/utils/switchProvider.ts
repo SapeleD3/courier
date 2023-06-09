@@ -2,14 +2,16 @@ import AwsSqsProvider from '../aws';
 import { Providers } from '../enums';
 import GcpPubSubProvider from '../gcp';
 import { ICourierProvider } from '../interface';
+import { CourierPayload } from '../types';
 
-const switchProvider = (courierProvider: Providers): ICourierProvider => {
+const switchProvider = (payload: CourierPayload): ICourierProvider => {
+  const { courierProvider, config = {} } = payload;
   switch (courierProvider) {
     case Providers.AWS_SQS:
-      return new AwsSqsProvider();
+      return new AwsSqsProvider({ config });
 
     default:
-      return new GcpPubSubProvider();
+      return new GcpPubSubProvider({ config });
   }
 };
 

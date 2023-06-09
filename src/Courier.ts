@@ -1,7 +1,10 @@
 import { Providers } from './enums';
 import { ICourier, ICourierProvider } from './interface';
-import { CourierPayload, Message } from './types';
+import { CourierPayload, Message, MessageRecieverProps } from './types';
 import { switchProvider } from './utils';
+import { config } from 'dotenv';
+
+config();
 
 class Courier implements ICourier {
   private provider: ICourierProvider;
@@ -14,15 +17,15 @@ class Courier implements ICourier {
     return this.provider.sendMessage(message);
   }
 
-  public async recieveMessage(message: any): Promise<void> {
+  public async recieveMessage(
+    message: MessageRecieverProps
+  ): Promise<string[]> {
     return this.provider.recieveMessage(message);
   }
 
   // NOTE: this method is public, indicating that the provider can be updated after instantiation
-  public setCourierProvider({
-    courierProvider = Providers.GCP_PUBSUB,
-  }: CourierPayload): void {
-    this.provider = switchProvider(courierProvider);
+  public setCourierProvider(payload: CourierPayload): void {
+    this.provider = switchProvider(payload);
   }
 
   public getActiveProviderName(): Providers {
