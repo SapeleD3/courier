@@ -17,6 +17,8 @@
   - [Set Courier Provider](#set-courier-provider)
 - [License](#license)
 
+> Package Location : https://www.npmjs.com/package/@sapeled3/courier
+
 ## Features
 
 - Cloud agnostic message queue
@@ -46,13 +48,13 @@ import { Courier } from '@sapeled3/courier';
 
 > There are 2 ways for authenticating GCP pub/sub service and both ways require the use of a service-account created in the same project with the permissions `Pub/Sub Admin`
 
-> **step 1 - ** this involves you exporting the location of the saved service-account json file Run
+> **step 1** this involves you exporting the location of the saved service-account json file Run
 
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS={path to service-account.json}
 ```
 
-> **step 2 - ** the Courier class provides a config payload to the constructer, that authenticates the courier depending on the provider, Example using `GCP_PUB/SUB`
+> **step 2** the Courier class provides a config payload to the constructer, that authenticates the courier depending on the provider, Example using `GCP_PUB/SUB`
 
 ```ts
 import { Courier } from '@sapeled3/courier';
